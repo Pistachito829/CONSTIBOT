@@ -9,20 +9,38 @@ import admin from "firebase-admin";
 
 dotenv.config();
 
-// Initialize Firebase Admin
-let serviceAccount;
-if (process.env.FIREBASE_SERVICE_ACCOUNT) {
-  serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-} else {
-  serviceAccount = JSON.parse(fs.readFileSync(path.join(process.cwd(), "firebase-service-account.json"), "utf-8"));
-}
+// Global indicators for DB state
+let realDb: any = null;
+let useLocalDb = false;
 
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-  });
+// Initialize Firebase Admin safely
+try {
+  let serviceAccount: any = null;
+  if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+    serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+  } else {
+    const serviceAccountPath = path.join(process.cwd(), "firebase-service-account.json");
+    if (fs.existsSync(serviceAccountPath)) {
+      serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf-8"));
+    }
+  }
+
+  if (serviceAccount) {
+    if (!admin.apps.length) {
+      admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+      });
+    }
+    realDb = admin.firestore(admin.app(), "tesis-v5");
+    console.log("[Firebase] Successfully initialized with service account.");
+  } else {
+    console.warn("[Firebase Warning] No FIREBASE_SERVICE_ACCOUNT env var or firebase-service-account.json file found. Falling back to Local JSON database.");
+    useLocalDb = true;
+  }
+} catch (error: any) {
+  console.error("[Firebase Error] Initialization failed, falling back to Local JSON database:", error.message);
+  useLocalDb = true;
 }
-const realDb = admin.firestore(admin.app(), "tesis-v5");
 
 class MockDocRef {
   id: string;
@@ -248,7 +266,7 @@ class LocalDatabase {
 }
 
 const localDb = new LocalDatabase();
-let useLocalDb = false;
+// useLocalDb is declared at the top of the file
 
 const db = {
   collection(name: string) {
@@ -791,7 +809,7 @@ Tono y Actitud: Mantendrás un tono respetuoso, profesional y académicamente ri
 7. Si notás que un alumno pide un resumen para evitar leer, o evidencia no haber leído el texto original, detené el análisis e indicale amablemente que la lectura previa es un requisito obligatorio. 
 8. Si no encontrás la información en la base de conocimiento, respondé: "Esa información no está disponible en mi base de conocimiento. Te recomiendo consultarla directamente con tu profesor.". 
 ## Corrección Obligatoria de Errores Fácticos del Estudiante:
-- Si el estudiante menciona un dato fáctico erróneo sobre el caso (como decir que Gabriel Arenzon medía 2 metros, cuando en realidad medía 1.45 metros y el mínimo exigido era 1.48 metros; o decir que la Resolución 957/81 del Ministerio de Educación que exigía la estatura mínima fue dictada en 1946 cuando en realidad fue dictada en 1981; o confundir las partes, los hechos o la decisión del tribunal), NUNCA lo des por correcto, ni lo valides, ni felicites al estudiante por esa afirmación errónea.
+- Si el estudiante menciona un dato fáctico erróneo sobre el caso (como decir que Gabriel Arenzon medía 2 metros, cuando en realidad medía 1.45 metros y el mínimo exigido era 1.48 metros; o decir que la Resolución 957/81 del Ministerio de Educación que exigía la estatura mínima fue dictada en 1981; o confundir las partes, los hechos o la decisión del tribunal), NUNCA lo des por correcto, ni lo valides, ni felicites al estudiante por esa afirmación errónea.
 - Debes corregir el dato de manera inmediata, amable y socrática, proporcionando la información real y exacta del fallo que consta en el material provisto, y luego formular una pregunta reflexiva que guíe al estudiante a razonar sobre los hechos correctos.
 ## Información clave que conocés 
 Tu objetivo es guiar al alumno para que construya su propia ficha jurisprudencial. El típico diálogo socrático que debes conducir abarca secuencialmente los siguientes temas: 
@@ -810,7 +828,7 @@ Si un alumno te pide que resuelvas un problema legal real, personal o redactes u
 - Debes incluir siempre, al finalizar cada respuesta en cada conversación, la siguiente leyenda exacta: "⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
 ## Formato de respuesta y Restricciones Estrictas de Markdown:
 - Queda TOTAL Y ABSOLUTAMENTE PROHIBIDO el uso de asteriscos (*) o cualquier tipo de formato Markdown para negritas o cursivas. 
-- No utilices asteriscos ni dobles asteriscos (**) en ninguna parte de tu mensaje, ni en títulos, ni en el nombre del estudiante, ni para dar énfasis. Tus respuestas deben ser exclusivamente de TEXTO PLANO. 
+- No utilices asteriscos ni dobles asteriscos (**) in ninguna parte de tu mensaje, ni en títulos, ni en el nombre del estudiante, ni para dar énfasis. Tus respuestas deben ser exclusivamente de TEXTO PLANO. 
 - Hacé UNA SOLA pregunta a la vez. El diálogo socrático requiere ir paso a paso; no abrumes al alumno con múltiples interrogantes en un solo mensaje. 
 - Usá texto simple y un tono conversacional para mantener la fluidez del diálogo. 
 - Nunca uses formato JSON en tus respuestas. Siempre respondé en texto plano o con viñetas simples y limpias sin asteriscos. 
