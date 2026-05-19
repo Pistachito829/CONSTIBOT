@@ -1,0 +1,326 @@
+{
+  "students": {
+    "gsod2c24mi": {
+      "name": "Elisa Belén Flores",
+      "legajo": "44814605",
+      "email": "",
+      "progress": 0,
+      "lastActive": "2026-05-18T15:30:09.650Z"
+    }
+  },
+  "cases": {
+    "gottschau": {
+      "title": "Caso Gottschau",
+      "year": 2006,
+      "tag": "Igualdad / Extranjeros / Empleo Público",
+      "description": "Análisis de la constitucionalidad del requisito de nacionalidad argentina para cargos públicos que no ejercen soberanía."
+    },
+    "caso_formosa": {
+      "title": "Caso Formosa",
+      "year": "2024",
+      "tag": "CONSTITUCIÓN DE LA PROVINCIA DE FORMOSA / ELECCIONES / PROSCRIPCION DE PARTIDO POLITICO",
+      "description": "Declarar inconstitucional la reelección indefinida para Gobernador/Vicegobernador en Formosa, al determinar que los mandatos ilimitados violan la alternancia en el poder y el sistema republicano exigidos por la Constitución Nacional.",
+      "addedAt": "2026-05-18T14:10:21.942Z",
+      "_subcollections": {
+        "chunks": {}
+      }
+    },
+    "arenzon": {
+      "title": "Arenzon",
+      "year": 1984,
+      "tag": "Derecho a la educación / Razonabilidad",
+      "description": "Análisis del fallo Arenzon sobre la razonabilidad de las exigencias físicas para el ingreso a la docencia."
+    }
+  },
+  "global_docs": {
+    "constitución_nacional": {
+      "title": "CONSTITUCIÓN NACIONAL",
+      "category": "NORMATIVA BASE",
+      "addedAt": "2026-05-18T14:12:28.851Z",
+      "_subcollections": {
+        "chunks": {}
+      }
+    },
+    "enseñanza_del_derecho_constitucional_a_través_del_método_de_casos": {
+      "title": "ENSEÑANZA DEL DERECHO CONSTITUCIONAL A TRAVÉS DEL MÉTODO DE CASOS",
+      "category": "NORMATIVA BASE",
+      "addedAt": "2026-05-18T15:10:35.276Z",
+      "_subcollections": {
+        "chunks": {}
+      }
+    }
+  },
+  "activity_log": {
+    "gpqaz3zo2xq": {
+      "userName": "Elisa Belén",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T02:43:48.625Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "De que trata este caso?"
+        },
+        {
+          "role": "ai",
+          "text": "Hola, Elisa Belén.\n\nMe alegra que estés lista para empezar. Sin embargo, al consultar mi base de conocimiento, veo que la información específica sobre el caso \"Arenzon\" no está disponible.\n\nTe recomiendo consultarla directamente con tu profesor para obtener el material de lectura correspondiente. Una vez que lo tengas, con gusto te guiaré en su análisis crítico.\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "zvrloiq4dwj": {
+      "userName": "Elisa Belén Flores",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T03:11:44.715Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "hola"
+        },
+        {
+          "role": "ai",
+          "text": "¡Hola, Elisa Belén Flores! Me alegra que estés lista para empezar.\n\nPara que podamos comenzar con el análisis crítico de fallos, que es el objetivo central de nuestra materia, te propongo que primero me digas a qué comisión perteneces. Esto me ayudará a tener un mejor contexto.\n\nUna vez que me lo digas, podemos arrancar con el primer paso fundamental: la lectura del fallo. ¿Ya tenés el fallo \"Arenzon\" a mano? Si es así, ¿qué te parece si empezamos por identificar los hechos más relevantes del caso?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "t6wa8axdh9": {
+      "userName": "Elisa Belén Flores",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T03:13:45.492Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "soy de la comision 3, pero para que necesitas la comisión?"
+        },
+        {
+          "role": "ai",
+          "text": "¡Excelente, Elisa Belén Flores! Gracias por compartir que sos de la Comisión 3.\n\nMe preguntás por qué necesito saber la comisión, y es una muy buena pregunta. Aunque mi metodología de guía socrática es la misma para todos los estudiantes, conocer la comisión me permite tener una idea del contexto general del grupo. A veces, los profesores pueden enfatizar ciertos aspectos o tener un ritmo particular en cada comisión, y esto me ayuda a entender mejor el punto de partida y las posibles necesidades específicas de los estudiantes de tu grupo. Es una forma de intentar personalizar un poco más mi apoyo, dentro de los límites de mi función como asistente virtual.\n\nAhora que ya tenemos eso claro, ¿qué te parece si nos metemos de lleno en el fallo \"Arenzon\"? Para empezar, y como primer paso fundamental en el método del caso, me gustaría que me cuentes: **¿Cuáles considerás que son los hechos más importantes de este caso?** Es decir, ¿qué sucedió concretamente que llevó a esta situación ante la justicia?"
+        }
+      ]
+    },
+    "fr5b9l4axt9": {
+      "userName": "Elisa Belén Flores",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T03:15:38.323Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "bueno para mi los hechos del fallo es que el señor arenzon queria ser profesor y media 2 metros y no lo dejaban profe"
+        },
+        {
+          "role": "ai",
+          "text": "¡Excelente intento, Elisa Belén Flores! Has identificado un punto clave: la altura del señor Arenzon y su deseo de ser profesor. Eso es un muy buen comienzo.\n\nAhora, para profundizar un poco más y asegurarnos de que no se nos escape ningún detalle importante, te propongo que revisemos el fallo con un poco más de atención. Si bien la altura es un dato central, ¿hay algún otro elemento en los hechos que te parezca relevante? Por ejemplo, ¿quién no lo dejaba ser profesor? ¿Por qué razón específica se le impedía acceder al cargo, más allá de su altura? ¿Qué tipo de cargo docente era?\n\nTe invito a releer esa parte del fallo y a buscar esos detalles que nos ayudarán a construir una imagen más completa de la situación. ¿Qué otros datos importantes encontrás?"
+        }
+      ]
+    },
+    "qtkot0ykn7": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:03:50.046Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "bueno para mi los hechos del fallo es que el senor arenzon queria ser profesor y media 2 metros y no lo dejaban profe"
+        },
+        {
+          "role": "ai",
+          "text": "Gracias por tu entusiasmo, Elisa Belen. Es un buen comienzo para ubicar el caso.\n\nSin embargo, hay un pequeño detalle en los hechos que me gustaría que revisaras con atención en el fallo. Mencionaste que el señor Arenzon medía 2 metros, pero si volvés a leer la sección de los hechos, verás que su estatura era diferente y que justamente esa diferencia era el motivo de la denegación de su matrícula.\n\n¿Podrías revisar el fallo y decirme cuál era la estatura real de Gabriel Arenzon y por qué ese dato era tan importante para el caso?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "dpvpfzwj7i6": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:04:20.427Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "no se, decime vos cuanta estatura tenia"
+        },
+        {
+          "role": "ai",
+          "text": "Entiendo tu impaciencia, Elisa Belen, pero mi objetivo es guiarte para que vos misma descubras los detalles del fallo. Es fundamental que te acostumbres a buscar la información directamente en el texto.\n\nVolvé a la sección de los hechos del fallo \"Arenzon, Gabriel D. c/ Estado Nacional\". Estoy seguro de que si leés con atención, encontrarás el dato exacto de la estatura de Gabriel Arenzon y la estatura mínima que se exigía.\n\n¿Podrías intentarlo una vez más y decirme qué encontraste?"
+        }
+      ]
+    },
+    "97or2dhccus": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:04:51.937Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "creo que media 1.60 metros y la estatura minima era 1.70 metros"
+        },
+        {
+          "role": "ai",
+          "text": "Gracias por volver a revisar, Elisa Belen. Estás más cerca, pero aún hay una pequeña discrepancia con los datos exactos del fallo.\n\nSi volvés a leer con mucha atención la sección de los hechos del caso \"Arenzon, Gabriel D. c/ Estado Nacional\", encontrarás las cifras precisas. Esos centímetros de diferencia son clave para entender la situación de Gabriel Arenzon.\n\n¿Podrías hacer una última lectura de esa parte y decirme cuál era la estatura exacta de Gabriel Arenzon y cuál era la estatura mínima requerida por la resolución? Esos números son muy importantes para comprender el conflicto."
+        }
+      ]
+    },
+    "1xvbs1te0ukj": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:05:23.103Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "creo que media 1.40 metros y la minima era 1.50 metros"
+        },
+        {
+          "role": "ai",
+          "text": "Gracias por tu persistencia, Elisa Belen. Es importante que nos aseguremos de tener los hechos claros desde el principio.\n\nEl fallo \"Arenzon, Gabriel D. c/ Estado Nacional\" establece que Gabriel Arenzon medía 1,45 metros. La resolución del Ministerio de Educación exigía una estatura mínima de 1,48 metros para los docentes de enseñanza secundaria.\n\nComo ves, la diferencia era de solo 3 centímetros. ¿Por qué crees que esta pequeña diferencia de estatura, de solo 3 centímetros, fue el centro de un conflicto que llegó hasta la Corte Suprema? ¿Qué derecho constitucional crees que podría estar en juego aquí?"
+        }
+      ]
+    },
+    "c90fo0nmnu9": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:12:22.954Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "Entonces en el fallo \"Arenzon, Gabriel D. c/ Estado Nacional\" se establece que Gabriel Arenzon medía 1,45 metros. Y la resolución del Ministerio de Educación exigía una estatura mínima de 1,48 metros para los docentes de enseñanza secundaria. Así?"
+        },
+        {
+          "role": "ai",
+          "text": "¡Exacto, Elisa Belen! ¡Así es! Esos son los datos fácticos correctos del caso Arenzon.\n\nAhora que tenemos los hechos claros, volvamos a la pregunta anterior para seguir profundizando en el análisis:\n\n¿Por qué crees que esta pequeña diferencia de estatura, de solo 3 centímetros, fue el centro de un conflicto que llegó hasta la Corte Suprema? ¿Qué derecho constitucional crees que podría estar en juego aquí?"
+        }
+      ]
+    },
+    "4z770drp04m": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:16:44.693Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "Bueno, a mi me dijo el Dr. Flores que la razón por la cual esto llevó al conflicto es por una Resolución Ministerial, que se realizó en el último gobierno de facto de la Argentina. Y el hecho ocurrió en un gobierno democrático. Acá se juegan derechos como la igualdad, el de trabajar, el de enseñar también."
+        },
+        {
+          "role": "ai",
+          "text": "Excelente, Elisa Belen. Has identificado muy bien algunos de los derechos fundamentales que están en juego en este caso: el derecho a trabajar, el de enseñar y aprender (que está en el Art. 14 de nuestra Constitución Nacional) y el principio de igualdad. ¡Muy bien!\n\nRespecto al contexto, es muy importante lo que mencionás. La Resolución 957/81 del Ministerio de Educación, que exigía la estatura mínima, efectivamente fue dictada en 1981. Y el fallo de la Corte Suprema sobre el caso de Gabriel Arenzon es de 1984, ya en un gobierno democrático. Es crucial tener en cuenta que la resolución era de un período anterior y se aplicaba en un contexto democrático distinto.\n\nAhora, pensando en esto y en los derechos que mencionaste, ¿cómo crees que la Corte Suprema analizó la \"razonabilidad\" de esa resolución de 1981 en el contexto de 1984? ¿Qué significa que una reglamentación de un derecho deba ser \"razonable\" según el Artículo 28 de la Constitución Nacional, y cómo se aplica eso a la exigencia de una estatura mínima para ser profesor de matemáticas?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "47nymere93k": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:32:44.273Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "profe cual era la resolucion y el anio de dictado que le impedia inscribirse a Gabriel Arenzon?"
+        },
+        {
+          "role": "ai",
+          "text": "Gracias por tu pregunta, Elisa Belen. Es importante tener los datos precisos.\n\nEn el caso de Gabriel Arenzon, la resolución que le impedía inscribirse era la **Resolución 957/81 del Ministerio de Educación, dictada en 1981**. Esta resolución fue la que estableció la exigencia de una estatura mínima de 1,48 metros para los docentes de enseñanza secundaria.\n\nAnteriormente mencionaste una resolución de 1946, pero para el caso específico de Arenzon, la que estaba en juego y fue impugnada era la de 1981.\n\nAhora que tenemos claro cuál era la resolución y su año de dictado, ¿cómo crees que el hecho de que esta resolución fuera de 1981 (y no de 1946 como habías pensado) influye en el análisis de su \"razonabilidad\" por parte de la Corte Suprema en 1984? ¿Cambia algo en tu perspectiva sobre el contexto o los argumentos?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "0fau6px8b2h7": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:33:14.867Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "ah bien, y que derecho constitucional crees que esta en discusion por esa resolucion de 1981?"
+        },
+        {
+          "role": "ai",
+          "text": "¡Excelente pregunta, Elisa Belen! Es fundamental identificar los derechos en juego.\n\nRecordando lo que ya habíamos conversado, ¿qué derechos fundamentales de Gabriel Arenzon crees que se vieron afectados por una resolución que le exigía una estatura mínima para poder ser profesor de matemáticas? Pensá en los derechos que mencionaste antes, como el de trabajar, el de enseñar y aprender, y el principio de igualdad.\n\n¿Cómo se relaciona la exigencia de una estatura mínima con la posibilidad de ejercer esos derechos, especialmente en el contexto de la enseñanza de matemáticas?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "54of2kocv7y": {
+      "userName": "Elisa Belen",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T04:36:41.340Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "entonces la resolucion es del 1946 o 1981?"
+        },
+        {
+          "role": "ai",
+          "text": "Gracias por pedir la aclaración, Elisa Belen. Es crucial tener este dato bien claro.\n\nSegún los hechos del caso \"Arenzon, Gabriel D. c/ Estado Nacional\" que estamos analizando, la resolución que le impedía inscribirse a Gabriel Arenzon y que fue dictada por el Ministerio de Educación, es la **Resolución 957/81, dictada en 1981**.\n\nEs importante que te bases siempre en los datos específicos del fallo que estamos estudiando.\n\nAhora que hemos aclarado definitivamente el año de la resolución, volvamos a la pregunta central: ¿qué derechos constitucionales de Gabriel Arenzon crees que se vieron afectados por esta Resolución 957/81, que le exigía una estatura mínima para poder ser profesor de matemáticas?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "40wzyvwwsi3": {
+      "userName": "Elisa Belén Flores",
+      "caseTitle": "gottschau",
+      "timestamp": "2026-05-18T06:22:20.788Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "Hola! Estoy listo para analizar el caso Gottschau. ¿Me podés contar de qué se trata?"
+        },
+        {
+          "role": "ai",
+          "text": "Hola, Elisa Belén Flores. ¡Excelente que estés lista para empezar con el análisis de casos!\n\nPara poder guiarte en el análisis crítico del caso \"Gottschau\", es fundamental que primero lo leas en su totalidad. Como profesor experto en el método del caso, mi objetivo es que desarrolles tu propia capacidad de análisis y razonamiento, y eso comienza con la lectura atenta del fallo.\n\nAdemás, debo informarte que la información específica sobre el caso \"Gottschau\" no se encuentra en mi base de conocimiento. Te recomiendo consultarla directamente con tu profesor para obtener el material del fallo y poder realizar la lectura previa que es indispensable para nuestro trabajo.\n\nUna vez que lo hayas leído, podemos empezar a desglosarlo paso a paso, identificando los hechos, el problema constitucional y los argumentos.\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "dmtzmknzru": {
+      "userName": "Elisa Belén Flores",
+      "caseTitle": "gottschau",
+      "timestamp": "2026-05-18T06:23:03.167Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "¿Cuáles son los hechos del caso Gottschau de acuerdo al fallo?"
+        },
+        {
+          "role": "ai",
+          "text": "Hola, Elisa Belén Flores.\n\nEsa información no está disponible en mi base de conocimiento. Te recomiendo consultarla directamente con tu profesor.\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "hcqjcgg94bb": {
+      "userName": "Elisa Belén Flores",
+      "caseTitle": "gottschau",
+      "timestamp": "2026-05-18T06:25:15.562Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "¿Cuáles son los hechos del caso Gottschau de acuerdo al fallo?"
+        },
+        {
+          "role": "ai",
+          "text": "¡Hola, Elisa Belén Flores!\n\nPara empezar con el análisis del caso \"Gottschau\", te propongo que identifiquemos los hechos principales. Según el fallo, ¿podrías explicarme quién era Evelyn Patrizia Gottschau y qué fue lo que solicitó, así como la razón por la que se le denegó su pedido?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "p38rffvloar": {
+      "userName": "Elisa Belén Flores",
+      "caseTitle": "arenzon",
+      "timestamp": "2026-05-18T06:25:34.122Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "¿Cuáles son los hechos del caso Arenzon?"
+        },
+        {
+          "role": "ai",
+          "text": "Hola, Elisa Belén Flores. ¡Excelente pregunta para empezar a desmenuzar este caso tan importante!\n\nPara que podamos analizarlo juntas, me gustaría que me contaras, con tus propias palabras, ¿qué fue lo que le sucedió a Gabriel Arenzon y por qué recurrió a la justicia?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    },
+    "k4ynzl1wztq": {
+      "userName": "Elisa Belén Flores",
+      "caseTitle": "gottschau",
+      "timestamp": "2026-05-18T15:30:49.672Z",
+      "messages": [
+        {
+          "role": "user",
+          "text": "Hola! Dale!"
+        },
+        {
+          "role": "ai",
+          "text": "¡Excelente, Elisa Belén Flores! Para comenzar con el análisis del caso \"Gottschau, Evelyn Patrizia c/ Consejo de la Magistratura de la Ciudad Autónoma de Buenos Aires\", me gustaría que identificaras los hechos principales que dieron origen a este conflicto.\n\n¿Podrías contarnos qué fue lo que sucedió y quiénes son las partes involucradas en este caso?\n\n⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
+        }
+      ]
+    }
+  },
+  "session_controls": {}
+}
