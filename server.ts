@@ -266,7 +266,6 @@ class LocalDatabase {
 }
 
 const localDb = new LocalDatabase();
-// useLocalDb is declared at the top of the file
 
 const db = {
   collection(name: string) {
@@ -667,7 +666,6 @@ app.delete("/api/admin/students/:id", async (req, res) => {
   const studentId = req.params.id;
   console.log("DELETE /api/admin/students/:id called with ID:", studentId);
   try {
-    // 1. Try deleting directly by document ID first if it exists
     const docRef = db.collection("students").doc(studentId);
     const docSnap = await docRef.get();
     if (docSnap.exists) {
@@ -676,7 +674,6 @@ app.delete("/api/admin/students/:id", async (req, res) => {
       return res.json({ status: "ok" });
     }
 
-    // 2. If not found by ID (e.g. if it was a temporary ID or legajo passed), search by legajo or name
     const snapshot = await db.collection("students").get();
     const docToClose = snapshot.docs.find(doc => {
       const data = doc.data();
@@ -691,7 +688,6 @@ app.delete("/api/admin/students/:id", async (req, res) => {
       return res.json({ status: "ok" });
     }
 
-    // 3. Fallback: just call delete on the ID to be safe
     console.log(`Fallback: student '${studentId}' not found by searching properties. Calling delete directly on ID...`);
     await db.collection("students").doc(studentId).delete();
     res.json({ status: "ok" });
@@ -712,7 +708,7 @@ app.get("/api/admin/stats", async (req, res) => {
       totalStudents: studentsSnap.size,
       totalCases: casesSnap.size,
       totalInteractions: activitySnap.size,
-      activeNow: Math.floor(Math.random() * 5) + 1 // Simulated for now
+      activeNow: Math.floor(Math.random() * 5) + 1
     };
     res.json(stats);
   } catch (error) {
@@ -745,14 +741,18 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-// 6. Cases list
-app.get("/api/cases", async (req, res) => {
+// 6. Get case details by ID
+app.get("/api/cases/:id", async (req, res) => {
+  const caseId = req.params.id;
   try {
-    const snapshot = await db.collection("cases").get();
-    const casesList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-    res.json(casesList);
+    const doc = await db.collection("cases").doc(caseId).get();
+    if (doc.exists) {
+      res.json({ id: doc.id, ...doc.data() });
+    } else {
+      res.status(404).json({ error: "Case not found" });
+    }
   } catch (error) {
-    res.status(500).json({ error: "Error fetching cases" });
+    res.status(500).json({ error: "Error fetching case details" });
   }
 });
 
@@ -761,7 +761,6 @@ app.delete("/api/cases/:id", async (req, res) => {
   const caseId = req.params.id;
   try {
     await db.collection("cases").doc(caseId).delete();
-    // Delete chunks (optional cleanup)
     const chunksRef = db.collection("cases").doc(caseId).collection("chunks");
     const chunks = await chunksRef.get();
     const batch = db.batch();
@@ -828,7 +827,7 @@ Si un alumno te pide que resuelvas un problema legal real, personal o redactes u
 - Debes incluir siempre, al finalizar cada respuesta en cada conversación, la siguiente leyenda exacta: "⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor."
 ## Formato de respuesta y Restricciones Estrictas de Markdown:
 - Queda TOTAL Y ABSOLUTAMENTE PROHIBIDO el uso de asteriscos (*) o cualquier tipo de formato Markdown para negritas o cursivas. 
-- No utilices asteriscos ni dobles asteriscos (**) in ninguna parte de tu mensaje, ni en títulos, ni en el nombre del estudiante, ni para dar énfasis. Tus respuestas deben ser exclusivamente de TEXTO PLANO. 
+- No utilices asteriscos ni dobles asteriscos (**) en ninguna parte de tu mensaje, ni en títulos, ni en el nombre del estudiante, ni para dar énfasis. Tus respuestas deben ser exclusivamente de TEXTO PLANO. 
 - Hacé UNA SOLA pregunta a la vez. El diálogo socrático requiere ir paso a paso; no abrumes al alumno con múltiples interrogantes en un solo mensaje. 
 - Usá texto simple y un tono conversacional para mantener la fluidez del diálogo. 
 - Nunca uses formato JSON en tus respuestas. Siempre respondé en texto plano o con viñetas simples y limpias sin asteriscos. 
@@ -942,14 +941,27 @@ app.post("/api/chat", async (req, res) => {
       contextData = `EXTRACTOS RELEVANTES (Fallo Arenzon - Pre-cargado de Seguridad):
 - Fallo: 'Arenzon, Gabriel D. c/ Estado Nacional' (CSJN, 1984).
 - Hechos: Gabriel D. Arenzon, de profesión matemático, solicitó inscribirse en el Instituto Nacional del Profesorado Secundario para cursar el profesorado de matemáticas. Se le denegó la matrícula con base en la Resolución 957/81 del Ministerio de Educación dictada en 1981, la cual exigía una estatura mínima de 1,48 metros para los docentes de enseñanza secundaria. Gabriel Arenzon medía 1,45 metros (3 centímetros menos del mínimo requerido).
-- Conflicto: Arenzon alegó la inconstitucionalidad de la resolución por vulnerar el derecho a aprender y enseñar (Art. 14 de la Constitución) y por ser arbitraria e irrazonable.
-- Decisión de la Corte Suprema: Declaró la inconstitucionalidad de la exigencia física. La Corte consideró que la restricción carecía de razonabilidad (Art. 28 CN), ya que la altura física de una persona no tiene ninguna relación con su capacidad intelectual, académica o pedagógica para enseñar matemáticas. Las reglamentaciones de los derechos constitucionales deben ser razonables y no desvirtuar su esencia.`;
+- Conflicto: Arenzon alegó la inconstitucionalidad de la resolución por vulnerar el derecho a aprender y enseñar (Art. 14 de la Constitución) and por ser arbitraria e irrazonable.
+- Decisión de la Corte Suprema: Declaró la inconstitucionalidad de la exigencia física. La Corte consideró que la restriction carecía de razonabilidad (Art. 28 CN), ya que la altura física de una persona no tiene ninguna relación con su capacidad intelectual, académica o pedagógica para enseñar matemáticas. Las reglamentaciones de los derechos constitucionales deben ser razonables y no desvirtuar su esencia.`;
     } else if (caseId === "gottschau") {
       contextData = `EXTRACTOS RELEVANTES (Fallo Gottschau - Pre-cargado de Seguridad):
 - Fallo: 'Gottschau, Evelyn Patrizia c/ Consejo de la Magistratura de la Ciudad Autónoma de Buenos Aires' (CSJN, 2006).
 - Hechos: Evelyn Patrizia Gottschau, abogada de nacionalidad alemana, solicitó inscribirse en el concurso público para cubrir el cargo de Secretaria de Primera Instancia en lo Contencioso Administrativo y Tributario del Poder Judicial de la Ciudad Autónoma de Buenos Aires. Se le denegó la inscripción con base en el artículo 10.1.4 del Reglamento de Concursos del Consejo de la Magistratura, el cual exigía poseer la nacionalidad argentina.
 - Conflicto: Gottschau alegó la inconstitucionalidad de dicha exigencia por resultar discriminatoria por razón de nacionalidad y violar los principios de igualdad (Art. 16 CN) y los derechos de los extranjeros (Art. 20 CN).
 - Decisión de la Corte Suprema: Declaró la inconstitucionalidad de la restricción de nacionalidad para dicho cargo. La Corte consideró que la nacionalidad es una "categoría sospechosa" y que toda distinción basada en el origen nacional goza de presunción de inconstitucionalidad, requiriendo un escrutinio estricto. Al no tratarse de un cargo que implique el ejercicio de la soberanía política o de funciones jurisdiccionales exclusivas de los jueces, restringir el acceso a extranjeros idóneos carece de una justificación estatal imperiosa y resulta irrazonable (Art. 28 CN).`;
+    } else if (caseId) {
+      try {
+        const caseDoc = await db.collection("cases").doc(caseId).get();
+        if (caseDoc.exists) {
+          const caseData = caseDoc.data();
+          contextData = `INFORMACIÓN DEL CASO DE ESTUDIO DE LA CÁTEDRA:
+- Fallo: ${caseData.title || caseId} (${caseData.year || "S/F"}).
+- Temática: ${caseData.tag || "Derecho Constitucional"}.
+- Descripción/Introducción provista por la Cátedra: ${caseData.description || "Análisis socrático interactivo del fallo."}`;
+        }
+      } catch (err) {
+        console.warn("Failed to fetch case data for context fallback:", err);
+      }
     }
 
     const fullSystemPrompt = SYSTEM_PROMPT
@@ -966,7 +978,6 @@ app.post("/api/chat", async (req, res) => {
       parts: [{ text: h.text }]
     }));
 
-    // Gemini API requires the first message to be from 'user'.
     if (formattedHistory.length > 0 && formattedHistory[0].role === 'model') {
       formattedHistory.unshift({ role: 'user', parts: [{ text: "Hola profesor, estoy listo para iniciar el análisis del caso." }] });
     }
@@ -986,14 +997,12 @@ app.post("/api/chat", async (req, res) => {
       aiResponse = "No puedo darte esa respuesta de forma directa, ya que mi objetivo es guiar tu propio razonamiento socrático. Sin embargo, analicemos juntos este punto: ¿Qué principios o derechos constitucionales crees que se están debatiendo aquí y cómo los conectarías con los hechos del caso?";
     }
 
-    // Post-process aiResponse to ensure it always ends with the error legend exactly once
     const warningMsg = "⚠️ Recordá que como agente de IA puedo cometer errores. Revisá siempre los resultados con tu profesor.";
     aiResponse = aiResponse.replace(/⚠️?\s*Recordá que como agente de IA puedo cometer errores\.?\s*Revisá siempre los resultados con tu profesor\.?/gi, "");
-    aiResponse = aiResponse.replace(/\*/g, ""); // Strips all asterisks (zero asterisks policy)
+    aiResponse = aiResponse.replace(/\*/g, "");
     aiResponse = aiResponse.trim();
     aiResponse = aiResponse + "\n\n" + warningMsg;
 
-    // Log Activity in Firestore
     await db.collection("activity_log").add({
       userName: studentName,
       caseTitle: caseId,
@@ -1011,7 +1020,6 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-// Endpoint for Teacher Panel to get live activity
 app.get("/api/admin/activity", async (req, res) => {
   try {
     const snapshot = await db.collection("activity_log")
