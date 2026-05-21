@@ -31,7 +31,7 @@ try {
         credential: admin.credential.cert(serviceAccount)
       });
     }
-    realDb = admin.firestore(admin.app(), "tesis-v5");
+    realDb = admin.firestore(admin.app(), "elisita44");
     console.log("[Firebase] Successfully initialized with service account.");
   } else {
     console.warn("[Firebase Warning] No FIREBASE_SERVICE_ACCOUNT env var or firebase-service-account.json file found. Falling back to Local JSON database.");
